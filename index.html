@@ -1,52 +1,74 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Todo List</title>
+  <meta name="google" value="notranslate">
+  <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,400italic,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.min.js"></script>
 </head>
+
 <body>
-  <!-- Adicionar Tarefas -->
-  <header id="add-task">
-    <form id="todo-form">
-      <input type="text" placeholder="Title" />
-      <textarea placeholder="Descrtipion"></textarea>
-      <input type="text" placeholder="Due Date (dd/mm/yyyy)" />
-      <input type="button" class="btn btn-primary" value="Add Task" />
-    </form>
-  </header>
 
-  <div id="tasks">
-    <!-- Tarefas Pendentes -->
-    <section id="pending" class="task-list">
-      <header class="task-header">Pending</header>
-        <ul>
-          <li class="todo-task">Uma tarega de teste</li>
-        </ul>
-      <footer>88 left items</footer>
-    </section>
+  <div class="warp">
 
-    <!-- Tarefas Pendentes -->
-    <section id="progress" class="task-list">
-      <header>In Progress</header>
-        <ul>
-          <!-- Tasks -->
-        </ul>
-      <footer>88 left items</footer>
-    </section>
+    <nav id="optionsbar">
+        <button class="btn icon icon-background">
+          Change Background
+        </button>
 
-    <!-- Tarefas Pendentes -->
-    <section id="completed" class="task-list">
-      <header>Completed</header>
-        <ul>
-          <!-- Tasks -->
-        </ul>
-      <footer>88 completed items</footer>
-    </section>
+        <div class="delete-area"></div>
+    </nav>
+    <!-- Adicionar Tarefas -->
+    <header id="add-task">
+      <form id="todo-form">
+        <div class="input-task">
+          <input type="text" placeholder="Add an item..." maxlength="255" />
+        </div>
+      </form>
+    </header>
+
+    <div id="board" class="clearfix">
+      <!-- Tarefas Pendentes -->
+      <section id="pending" class="task-list">
+        <header class="task-list-header">Pending</header>
+          <ul>
+            <li class="task-item">
+              <div class="task-title-warp">Uma tarefa de teste</div>
+            </li>
+            <li class="task-item">
+              <div class="task-title-warp">Uma tarefa de teste</div>
+            </li>
+            <li class="task-item">
+              <div class="task-title-warp">Uma tarefa de teste</div>
+            </li>
+          </ul>
+        <footer class="task-list-footer">0 left items</footer>
+      </section>
+
+      <!-- Tarefas Pendentes -->
+      <section id="progress" class="task-list">
+        <header class="task-list-header">In Progress</header>
+          <ul>
+            <!-- Tasks -->
+          </ul>
+        <footer class="task-list-footer">0 left items</footer>
+      </section>
+
+      <!-- Tarefas Pendentes -->
+      <section id="completed" class="task-list">
+        <header class="task-list-header">Completed</header>
+          <ul>
+            <!-- Tasks -->
+          </ul>
+        <footer class="task-list-footer">0 completed items</footer>
+      </section>
+    </div>
   </div>
-
-  <footer>
-    <button class="options"><span class="icon icon-background"></span>Change Background</button>
-  </footer>
 
   <div id="modal">
     <!-- Modal Content -->

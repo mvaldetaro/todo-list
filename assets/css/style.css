@@ -1,0 +1,192 @@
+/* Style */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+html, input, textarea, button {
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.125em;
+}
+
+.warp {
+  background: url("../images/backgrounds/default.jpg") no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  padding-top: 48px;
+}
+
+#add-task form {
+  width: 648px;
+  margin: 25px auto;
+}
+
+#add-task form input[type="text"] {
+  width: 100%;
+  padding-left: 25px;
+  padding-right: 25px;
+  color: #fff;
+  font-weight: bold;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+  font-size: 13px;
+  outline: none;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+  background: none;
+  border: none;
+}
+
+.input-task {
+  border-radius: 4px;
+  position: relative;
+  margin: 12px 1px 13px 0;
+  border-top: 1px solid rgba(0,0,0,0.4);
+  padding: 8px 12px;
+  -webkit-box-shadow: inset 0 0 4px rgba(0,0,0,0.4),0 1px 0 rgba(255,255,255,0.4);
+  box-shadow: inset 0 0 4px rgba(0,0,0,0.4),0 1px 0 rgba(255,255,255,0.4);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(0,0,0,0.3)), color-stop(1, rgba(0,0,0,0.1)));
+  background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.3) 0, rgba(0,0,0,0.1) 100%);
+}
+
+/* ------------------------
+  TASK LIST
+--------------------------*/
+
+.task-list {
+  float: left;
+  width: 29%;
+  margin: 0 2%;
+}
+
+.task-list .task-list-header {
+  border-bottom: 1px solid rgba(255,255,255,0.6);
+  padding: 12px 0;
+  font-size: 1.313em;
+  line-height: 1.313em;
+  color:rgba(255,255,255,1);
+  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+  font-weight: 100;
+}
+
+.task-list .task-list-footer {
+  border-top: 1px solid rgba(255,255,255,0.6);
+  padding: 15px 0;
+  font-size: 0.688em;
+  color:rgba(255,255,255,0.9);
+  text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+}
+
+.task-list ul {
+  border-radius: 5px;
+  border: 1px dashed rgba(255,255,255,0.3);
+  padding: 5px;
+  min-height: 43px;
+}
+
+/* ------------------------
+  TASK ITEM
+--------------------------*/
+
+.task-item {
+  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.4),0 0 0 1px rgba(0,0,0,0.8);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.4),0 0 0 1px rgba(0,0,0,0.08);
+  background: #eaeaea url("../images/textures/task.png") repeat-x;
+  opacity: 0.95;
+  list-style: none;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  position: relative;
+  height: 34px;
+  margin: 5px;
+}
+
+.task-item .task-title-warp {
+  font-size: 0.813em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  z-index: 1;
+  padding: 9px 0;
+  line-height: 16px;
+  color: #423e3e;
+  position: relative;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.8);
+  margin: 0 15px;
+}
+
+#optionsbar {
+  height: 48px;
+  width: 100%;
+  background: rgba(44, 62, 80,0.8);
+  position: fixed;
+  top: 0;
+}
+
+.delete-area {
+  position: absolute;
+  top:0 ;
+  right: 15px;
+  width: 32px;
+  height: 32px;
+  border-radius: 5px;
+  border: 1px dashed rgba(255,255,255,0.3);
+  margin: 8px;
+  background: url(../images/icons/delete.svg) no-repeat center center;
+  background-size: 39px;
+}
+
+.btn {
+  border: 1px solid rgba(255,255,255,1);
+  border-radius: 4px;
+  background: none;
+  font-size: 0.688em;
+  color: rgba(255,255,255,1);
+  height: 32px;
+  margin: 8px ;
+  line-height: 30px;
+  display: inline-block;
+}
+
+.icon {
+  padding-left: 40px;
+}
+
+.icon-background {
+  background: url(../images/icons/options.svg) no-repeat 10px center;
+  background-size: 18px;
+  fill: #ffffff;
+}
+
+
+
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.clearfix {
+    *zoom: 1;
+}
