@@ -67,6 +67,8 @@ var addItem = function() {
   // Reset Form
   inputs[0].value = "";
 
+  console.log("Opa!");
+
 }
 
 //Send form if they hit enter.
@@ -74,7 +76,7 @@ document.onkeypress = enter;
 function enter(e){
   if (e.which == 13){
     addItem();
-    console.log("Enter pressionado Enviado!")
+    event.preventDefault();
   }
 }
 

@@ -49,6 +49,10 @@ body {
   border: none;
 }
 
+#add-task form input[type="button"] {
+  display: none;
+}
+
 .input-task {
   border-radius: 4px;
   position: relative;
