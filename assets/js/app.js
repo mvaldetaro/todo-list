@@ -36,10 +36,46 @@ var generateTask = function(params){
   }).appendTo(wrapper);
 }
 
-generateTask({
-  id: "123",
-  code: "1",
-  title: "Uma tarefa para teste"
-});
+// Submit
 
-console.log("Chegando aqui!");
+var addItem = function() {
+  var inputs = $("#" + defaults.formId + " :input"),
+    errorMessage = "Title can not empty",
+    id, title, tempData;
+  if (inputs.length !== 2) {
+    return;
+  }
+
+  title = inputs[0].value;
+
+  if (!title) {
+    generateDialog(errorMessage);
+    return;
+  };
+
+  id = new Date().getTime();
+
+  tempData = {
+    id: id,
+    code: "1",
+    title: title
+  };
+
+  // Generate Todo Element
+  generateTask(tempData);
+
+  // Reset Form
+  inputs[0].value = "";
+
+}
+
+//Send form if they hit enter.
+document.onkeypress = enter;
+function enter(e){
+  if (e.which == 13){
+    addItem();
+    console.log("Enter pressionado Enviado!")
+  }
+}
+
+
