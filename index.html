@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Todo List</title>
+</head>
+<body>
+  <!-- Adicionar Tarefas -->
+  <header id="add-task">
+    <form id="todo-form">
+      <input type="text" placeholder="Title" />
+      <textarea placeholder="Descrtipion"></textarea>
+      <input type="text" placeholder="Due Date (dd/mm/yyyy)" />
+      <input type="button" class="btn btn-primary" value="Add Task" />
+    </form>
+  </header>
+
+  <div id="tasks">
+    <!-- Tarefas Pendentes -->
+    <section id="pending" class="task-list">
+      <header class="task-header">Pending</header>
+        <ul>
+          <li class="todo-task">Uma tarega de teste</li>
+        </ul>
+      <footer>88 left items</footer>
+    </section>
+
+    <!-- Tarefas Pendentes -->
+    <section id="progress" class="task-list">
+      <header>In Progress</header>
+        <ul>
+          <!-- Tasks -->
+        </ul>
+      <footer>88 left items</footer>
+    </section>
+
+    <!-- Tarefas Pendentes -->
+    <section id="completed" class="task-list">
+      <header>Completed</header>
+        <ul>
+          <!-- Tasks -->
+        </ul>
+      <footer>88 completed items</footer>
+    </section>
+  </div>
+
+  <footer>
+    <button class="options"><span class="icon icon-background"></span>Change Background</button>
+  </footer>
+
+  <div id="modal">
+    <!-- Modal Content -->
+  </div>
+</body>
+</html>
