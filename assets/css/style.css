@@ -113,7 +113,7 @@ body {
   margin: 5px;
 }
 
-.task-item .task-title-warp {
+.task-item .task-title {
   font-size: 0.813em;
   white-space: nowrap;
   overflow: hidden;
@@ -149,7 +149,9 @@ body {
 }
 
 .btn {
-  border: 1px solid rgba(255,255,255,1);
+  border: 1px solid rgb(255,255,255);
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
   border-radius: 4px;
   background: none;
   font-size: 0.688em;
