@@ -10,20 +10,14 @@
   <link rel="stylesheet" href="assets/css/style.css">
 
   <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.min.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
-
 </head>
 
 <body>
-
   <div class="warp">
-
     <nav id="optionsbar">
         <button class="btn icon icon-background">
           Change Background
         </button>
-
         <div class="delete-area"></div>
     </nav>
     <!-- Adicionar Tarefas -->
@@ -37,35 +31,26 @@
 
     <div id="board" class="clearfix">
       <!-- Tarefas Pendentes -->
-      <section id="pending" class="task-list">
+      <section class="task-list">
         <header class="task-list-header">Pending</header>
-          <ul>
-            <li class="task-item">
-              <div class="task-title">Uma tarefa de teste</div>
-            </li>
-            <li class="task-item">
-              <div class="task-title">Uma tarefa de teste</div>
-            </li>
-            <li class="task-item">
-              <div class="task-title">Uma tarefa de teste</div>
-            </li>
+          <ul id="pending">
           </ul>
         <footer class="task-list-footer">0 left items</footer>
       </section>
 
       <!-- Tarefas Pendentes -->
-      <section id="progress" class="task-list">
+      <section class="task-list">
         <header class="task-list-header">In Progress</header>
-          <ul>
+          <ul id="progress">
             <!-- Tasks -->
           </ul>
         <footer class="task-list-footer">0 left items</footer>
       </section>
 
       <!-- Tarefas Pendentes -->
-      <section id="completed" class="task-list">
+      <section class="task-list">
         <header class="task-list-header">Completed</header>
-          <ul>
+          <ul id="completed">
             <!-- Tasks -->
           </ul>
         <footer class="task-list-footer">0 completed items</footer>
@@ -76,5 +61,8 @@
   <div id="modal">
     <!-- Modal Content -->
   </div>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+  <script src="assets/js/app.js"></script>
 </body>
 </html>
