@@ -1,10 +1,8 @@
-var inputSpeech = document.querySelectorAll('#inputSpeech');
+var startRec = document.querySelector('#start_button');
 var recognizing = false;
 var text = "";
 
 var language = 'pt-BR';
-
-inputSpeech.value= '';
 
 var SpeechRecognition = window.SpeechRecognition ||
                         window.webkitSpeechRecognition ||
@@ -12,43 +10,42 @@ var SpeechRecognition = window.SpeechRecognition ||
                         window.msSpeechRecognition ||
                         window.oSpeechRecognition;
 
-var recognizing = false;
-
 if (SpeechRecognition !== undefined) {
     var recognition = new SpeechRecognition;
-    recognition.lang = language;
-    recognition.continuous = true;
-    recognition.interimResults = true;
 
     recognition.onstart = function() {
-      var recognizing = true;
+      recognizing = true;
+      startRec.style.opacity = "1";
       console.log('Fale Calmamente.');
     };
 
     recognition.onerror = function(event) {
-      console.log("Reconheceu um erro.");
+      console.log('Reconheceu um erro.');
     }
 
     recognition.onend = function() {
       recognizing = false;
-      console.log("Concluído!");
+      startRec.style.opacity = ".7";
+      console.log('Concluído!');
     }
 
     recognition.onresult = function(event) {
-      for (var i = event.resultIndex; i < event.results.length; ++i) {
-        if (event.results[i].isFinal) {
-          text += event.results[i][0].transcript;
-          event.result = text;
-        }
+      if (event.results.length > 0) {
+        inspeech.value = event.results[0][0].transcript;
       }
       console.log(text);
     }
 
-    recognition.start();
+    startRec.onclick = function(event) {
+      event.preventDefault();
+      recognition.start();
+    }
 
 } else {
     console.error('Your browser do not support the Web Speech API');
 }
+
+
 
 
 

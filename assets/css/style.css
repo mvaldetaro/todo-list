@@ -75,6 +75,7 @@ body {
   position: absolute;
   top: 3px;
   left:5px;
+  opacity: .7;
 }
 
 #start_button img {
