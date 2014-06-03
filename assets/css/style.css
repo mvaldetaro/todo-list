@@ -65,6 +65,10 @@ body {
   background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.3) 0, rgba(0,0,0,0.1) 100%);
 }
 
+#board {
+
+}
+
 /* ------------------------
   TASK LIST
 --------------------------*/
@@ -72,6 +76,7 @@ body {
 .task-list {
   float: left;
   width: 29%;
+  height: 100%;
   margin: 0 2%;
 }
 
@@ -104,17 +109,23 @@ body {
   TASK ITEM
 --------------------------*/
 
+#completed .task-item {
+  background: #eaeaea url("../images/textures/task.png") 0 -34px repeat-x !important;
+  opacity: .6;
+}
+
 .task-item {
   -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.4),0 0 0 1px rgba(0,0,0,0.8);
   box-shadow: 0 1px 3px rgba(0,0,0,0.4),0 0 0 1px rgba(0,0,0,0.08);
   background: #eaeaea url("../images/textures/task.png") repeat-x;
-  opacity: 0.95;
+  opacity: .95;
   list-style: none;
   -webkit-border-radius: 4px;
   border-radius: 4px;
   position: relative;
   height: 34px;
   margin: 5px;
+  display: block;
 }
 
 .task-item .task-title {

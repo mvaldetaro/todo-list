@@ -14,6 +14,10 @@ var defaults = {
   "3" : "#completed"
 };
 
+var data = JSON.parse(localStorage.getItem("todoData"));
+
+data = data || {};
+
 // Add Task
 
 var generateTask = function(params){
@@ -34,7 +38,22 @@ var generateTask = function(params){
     "class" : defaults.todoTitle,
     "text": params.title
   }).appendTo(wrapper);
+
+  wrapper.draggable({
+    start: function() {
+      $("." + defaults.deleteDiv).show();
+    },
+    stop: function() {
+      $("." + defaults.deleteDiv).hide();
+    }
+  });
+
 }
+
+//Remove Task
+var removeElement = function(params) {
+  $("#" + defaults.taskId + params.id).remove();
+};
 
 // Submit
 
@@ -64,6 +83,10 @@ var addItem = function() {
   // Generate Todo Element
   generateTask(tempData);
 
+  // Saving element in local storage
+  data[id] = tempData;
+  localStorage.setItem("todoData", JSON.stringify(data));
+
   // Reset Form
   inputs[0].value = "";
 
@@ -79,5 +102,60 @@ function enter(e){
     event.preventDefault();
   }
 }
+
+// Init App
+var init = function (options) {
+
+  $("." + defaults.deleteDiv).hide();
+
+  //Load Local Storage
+  options = options || {};
+  options = $.extend({}, defaults, options);
+
+  $.each(data, function (index, params) {
+      generateTask(params);
+  });
+
+  //Drag and Drop
+  $("." + defaults.todoTask).draggable({
+    cursor: "move",
+    cursorAt: {
+      top: 17,
+      left: 183
+    }
+  });
+
+  // Adding drop function to each category of task
+  $.each(codes, function(index, value) {
+    $(value).droppable({
+      drop: function(event, ui) {
+        var element = ui.helper,
+            css_id = element.attr("id"),
+            id = css_id.replace(options.taskId, ""),
+            object = data[id];
+
+        // Removing old element
+        removeElement(object);
+
+        // Changing object code
+        object.code = index;
+
+        // Generating new element
+        generateTask(object);
+
+        // Updating Local Storage
+        data[id] = object;
+        localStorage.setItem("todoData", JSON.stringify(data));
+
+        // Hiding Delete Area
+        $("#" + defaults.deleteDiv).hide();
+      }
+    });
+  });
+}
+
+init();
+
+
 
 
