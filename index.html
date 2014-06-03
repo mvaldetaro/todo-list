@@ -24,7 +24,10 @@
     <header id="add-task">
       <form id="todo-form" accept-charset="utf-8">
         <div class="input-task">
-          <input type="text" placeholder="Add an item..." maxlength="255" />
+          <button id="start_button" onclick="startButton(event)">
+            <img id="start_img" src="assets/images/icons/microphone28.svg" alt="Start">
+          </button>
+          <input type="text" id="inputSpeech" placeholder="Add an item..." maxlength="255" value=""/>
           <input type="button" class="btn" value="Add Task" />
         </div>
       </form>
@@ -65,5 +68,6 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
   <script src="assets/js/app.js"></script>
+  <script src="assets/js/speech.js"></script>
 </body>
 </html>
