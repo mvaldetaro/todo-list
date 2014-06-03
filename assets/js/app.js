@@ -95,7 +95,7 @@ var generateTask = function(params){
     "class" : defaults.todoTask,
     "id" : defaults.taskId + params.id,
     "data" : params.id,
-  }).appendTo(parent);
+  }).prependTo(parent);
 
   $("<div />", {
     "class" : defaults.todoTitle,
