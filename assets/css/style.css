@@ -150,11 +150,12 @@ body {
   top: 0;
 }
 
-.delete-area {
+#delete-area {
+  display: none;
   position: absolute;
   top:0 ;
-  right: 15px;
-  width: 32px;
+  left: 33%;
+  width: 33%;
   height: 32px;
   border-radius: 5px;
   border: 1px dashed rgba(255,255,255,0.3);
