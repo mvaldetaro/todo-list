@@ -4,7 +4,7 @@ var defaults = {
   todoTitle: "task-title",
   todoDate: "task-date",
   todoDescription: "task-description",
-  taskId: "task-",
+  taskId: "",
   formId: "todo-form",
   dataAttribute: "data",
   deleteArea: "delete-area"
@@ -28,6 +28,8 @@ var init = function (options) {
   $.each(data, function (index, params) {
       generateTask(params);
   });
+
+
 
   // Adding drop function to each category of task
   $.each(codes, function(index, value) {
@@ -92,7 +94,7 @@ var generateTask = function(params){
   wrapper = $("<li />", {
     "class" : defaults.todoTask,
     "id" : defaults.taskId + params.id,
-    "data" : params.id
+    "data" : params.id,
   }).appendTo(parent);
 
   $("<div />", {

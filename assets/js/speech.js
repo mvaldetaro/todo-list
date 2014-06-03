@@ -1,6 +1,6 @@
 var startRec = document.querySelector('#start_button');
 var recognizing = false;
-var text = "";
+var text = '';
 
 var language = 'pt-BR';
 
@@ -15,7 +15,7 @@ if (SpeechRecognition !== undefined) {
 
     recognition.onstart = function() {
       recognizing = true;
-      startRec.style.opacity = "1";
+      startRec.style.opacity = '1';
       console.log('Fale Calmamente.');
     };
 
@@ -25,7 +25,12 @@ if (SpeechRecognition !== undefined) {
 
     recognition.onend = function() {
       recognizing = false;
-      startRec.style.opacity = ".7";
+
+      var newItem = setTimeout(function() { addItem() }, 1000);
+
+
+
+      startRec.style.opacity = '.7';
       console.log('Concluído!');
     }
 
