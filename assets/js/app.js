@@ -29,8 +29,6 @@ var init = function (options) {
       generateTask(params);
   });
 
-
-
   // Adding drop function to each category of task
   $.each(codes, function(index, value) {
     $(value).droppable({
@@ -76,6 +74,7 @@ var init = function (options) {
 
       // Hiding Delete Area
       $("#" + defaults.deleteArea).hide();
+      $("body").css('cursor','pointer');
     }
   });
 }
@@ -105,24 +104,26 @@ var generateTask = function(params){
   wrapper.draggable({
     start: function() {
       $("#" + defaults.deleteArea).fadeIn(160);
+      $('body').css("cursor","move");
     },
     stop: function() {
       $("#" + defaults.deleteArea).fadeOut(160);
+      $('body').css("cursor","pointer");
     },
     revert: "invalid",
     revertDuration : 160,
-    cursor: "move",
     cursorAt: {
       top: 17,
       left: 183
     }
   });
-
+  displaycount();
 }
 
 //Remove Task
 var removeTask = function(params) {
   $("#" + defaults.taskId + params.id).remove();
+  displaycount();
 };
 
 // Submit
