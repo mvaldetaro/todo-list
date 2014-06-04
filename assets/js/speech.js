@@ -1,7 +1,5 @@
 var startRec = document.querySelector('#start_button');
 var recognizing = false;
-var text = '';
-
 var language = 'pt-BR';
 
 var SpeechRecognition = window.SpeechRecognition ||
@@ -12,6 +10,7 @@ var SpeechRecognition = window.SpeechRecognition ||
 
 if (SpeechRecognition !== undefined) {
     var recognition = new SpeechRecognition;
+    recognition.lang = language;
 
     recognition.onstart = function() {
       recognizing = true;
@@ -25,10 +24,8 @@ if (SpeechRecognition !== undefined) {
 
     recognition.onend = function() {
       recognizing = false;
-
+      //function addItem locaction: assets/js/app.js
       var newItem = setTimeout(function() { addItem() }, 1000);
-
-
 
       startRec.style.opacity = '.7';
       console.log('Concluído!');
