@@ -1,0 +1,79 @@
+.animated {
+      -webkit-animation-duration: 0.3s;
+      animation-duration: 0.3s;
+      -webkit-animation-fill-mode: both;
+      animation-fill-mode: both;
+      -webkit-animation-timing-function: linear;
+      animation-timing-function: linear;
+      animation-iteration-count:infinite;
+      -webkit-animation-iteration-count:infinite;
+    }
+
+    .animated-inside {
+      -webkit-animation-duration: 0.5s;
+      animation-duration: 0.5s;
+      -webkit-animation-fill-mode: both;
+      animation-fill-mode: both;
+      -webkit-animation-timing-function: linear;
+      animation-timing-function: linear;
+      animation-iteration-count:infinite;
+      -webkit-animation-iteration-count:infinite;
+    }
+
+    @-webkit-keyframes pulse {
+        0% { -webkit-transform: scale(1); }
+        50% { -webkit-transform: scale(1.1); }
+        100% { -webkit-transform: scale(1); }
+    }
+
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.1); }
+        100% { transform: scale(1); }
+    }
+
+    @-webkit-keyframes pulse-inside {
+        0% { -webkit-transform: scale(1); }
+        25% { -webkit-transform: scale(1.6); }
+        50% { -webkit-transform: scale(0.5); }
+        75% { -webkit-transform: scale(1.6); }
+        100% { -webkit-transform: scale(1); }
+    }
+
+    @keyframes pulse-inside {
+        0% { -webkit-transform: scale(1); }
+        25% { -webkit-transform: scale(1.5); }
+        50% { -webkit-transform: scale(0.5); }
+        75% { -webkit-transform: scale(1.5); }
+        100% { -webkit-transform: scale(1); }
+    }
+
+    .pulse {
+        -webkit-animation-name: pulse;
+        animation-name: pulse;
+    }
+
+    .pulse-inside {
+        -webkit-animation-name: pulse-inside;
+        animation-name: pulse-inside;
+    }
+
+    #circle {
+      width: 30px;
+      height: 30px;
+      background: none;
+      border-radius: 15px;
+      border: 1px solid #ffffff;
+      position: relative;
+      margin: 4px -6px;
+    }
+
+    #circle-inside {
+      width: 15px;
+      height: 15px;
+      background: #ffffff;
+      border-radius: 7.5px;
+      position: absolute;
+      top:20.1%;
+      left:21.7%;
+    }

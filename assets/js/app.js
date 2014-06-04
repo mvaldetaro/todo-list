@@ -74,7 +74,7 @@ var init = function (options) {
 
       // Hiding Delete Area
       $("#" + defaults.deleteArea).hide();
-      $("body").css('cursor','pointer');
+      $('body').css("cursor","default");
     }
   });
 }
@@ -108,7 +108,7 @@ var generateTask = function(params){
     },
     stop: function() {
       $("#" + defaults.deleteArea).fadeOut(160);
-      $('body').css("cursor","pointer");
+      $('body').css("cursor","default");
     },
     revert: "invalid",
     revertDuration : 160,
@@ -160,6 +160,8 @@ var addItem = function() {
 
   // Reset Form
   inputs[0].value = "";
+
+  $('body').css("cursor","default");
 
 }
 
